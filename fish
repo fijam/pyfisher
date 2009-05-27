@@ -3,30 +3,30 @@
 import scipy
 import math
 
-a = input("a: ")
-b = input("b: ")
-c = input("c: ")
-d = input("d: ")
-
-# standard deviation of the mean for the 95% confidence interval
-zl = 1.96
+a = input("a1: ")
+b = input("a2: ")
+c = input("b1: ")
+d = input("b2: ")
 
 # some matrix assumptions
-w1 = a + b 
-w2 = c + d
-k1 = a + c
-k2 = b + d
+row1 = a + b 
+row2 = c + d
+column1 = a + c
+column2 = b + d
 
 pa = 0
 x = 0
 
 def fish():
-    z = scipy.comb(w1,a)*scipy.comb(w2,k1-a)/scipy.comb(w1 + w2,k1)
+    z = scipy.comb(row1,a)*scipy.comb(row2,column1-a)/scipy.comb(row1 + row2,column1)
     return z
 
 print "Results"
 
-# I don't quite remember how this works
+# Odds ratio and confidence intervals. I don't quite remember how this 
+# works. It will be rewritten and made into a class or something
+# standard deviation of the mean for the 95% confidence interval
+#zl = 1.96
 #try:
 #    oddsr = float(a * d) / float(b * c)
 #    seln = math.sqrt(1/float(a) + 1/float(b) + 1/float(c) + 1/float(d))
@@ -40,18 +40,18 @@ print "Results"
 #    print "BLAD. Do obliczenia OR wszystkie liczby musza byc > 0"
 
 
-if k1 - w2 > 0:
-    od = k1 - w2
+if column1 - row2 > 0:
+    od = column1 - row2
 else:
     od=0
-do = min(w1, k1)
+do = min(row1, column1)
 #print "from:", od, "to", do
 
 pa = fish()
 print "pa:", pa
 for a in range(od, do + 1):
 # debug
-#    print "matrix", a, w1 - a, k1 - a, w2 - k1 + a, "p", fish()
+#    print "matrix", a, row1 - a, column1 - a, row2 - column1 + a, "p", fish()
     if fish() <= pa:
         x = x + fish()
 print "two-sided p:", x
