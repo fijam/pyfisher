@@ -1,0 +1,16 @@
+# Odds ratio and confidence intervals. I don't quite remember how this 
+# works. It will be rewritten and made into a class or something
+#
+# standard deviation of the mean for the 95% confidence interval
+#zl = 1.96
+#try:
+#    oddsr = float(a * d) / float(b * c)
+#    seln = math.sqrt(1/float(a) + 1/float(b) + 1/float(c) + 1/float(d))
+#    conf1 = math.exp(math.log(oddsr) - zl * seln)
+#    conf1b = oddsr - zl * seln
+#    conf2 = math.exp(math.log(oddsr) + zl * seln)
+#    conf2b = oddsr + zl * seln
+#    print "OR:", oddsr
+#   print "CI dla z =", zl, ":", conf1, conf1b, conf2, conf2b
+#except ArithmeticError:
+#    print "BLAD. Do obliczenia OR wszystkie liczby musza byc > 0"
