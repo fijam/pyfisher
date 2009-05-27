@@ -1,0 +1,8 @@
+This lump of code is my implementation of Fisher's exact test in Python. 
+I planned on using this to write a OpenOffice plugin but I lack time and 
+motivation. 
+
+Since I am just a humble Medical Sciences student this is not exactly 
+how a programmer would write it, but hey, it works. 
+
+theory: http://mathworld.wolfram.com/FishersExactTest.html
